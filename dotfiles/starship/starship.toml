@@ -1,0 +1,47 @@
+# Don't print a new line at the start of the prompt
+command_timeout = 500
+add_newline = false
+
+# Make prompt a single line instead of two lines
+[line_break]
+disabled = true
+
+# Replace the "❯" symbol in the prompt with "➜"
+[character]                         # The name of the module we are configuring is "character"
+error_symbol = "[✖](bold red) "
+success_symbol = "[➜](#FFFFFF)"  # The "success_symbol" is set to "➜" with color "bold green"
+
+# Use custom format
+# format = """
+# [┌───────────────────>](bold green)
+# [│](bold green)$directory$rust$package
+# [└─>](bold green) """
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+[time]
+disabled = false
+format = '[ 🕙 $time ]($style) '
+time_format = "%I:%M:%S %p"
+utc_time_offset = "+6"
+style = "bold bg:#5A6374"
+
+[username]
+style_user = "BOLD #FFFFFF"
+show_always = false
+
+# Indicates when in bash shell.
+[custom.bash]
+command = "echo 🚀"
+when = '[ "$STARSHIP_SHELL" == "bash" ]'
+
+# Indicates when in fish shell.
+[custom.fish]
+command = "echo 🐠"
+when = 'test "$STARSHIP_SHELL" = "fish"'
+
+[custom.zsh]
+command = "echo 🦀"
+when = 'test "$STARSHIP_SHELL" = "zsh"'   
