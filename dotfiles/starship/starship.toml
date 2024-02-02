@@ -23,7 +23,7 @@ disabled = true
 
 [time]
 disabled = false
-format = 'PUSH BKP 🙅 [ 🕙 $time ]($style) '
+format = 'PUSH-BKP 🙅 [ 🕙 $time ]($style) '
 time_format = "%I:%M:%S %p"
 utc_time_offset = "+6"
 style = "bold bg:#5A6374"
