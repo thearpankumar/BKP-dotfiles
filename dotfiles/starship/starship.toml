@@ -23,7 +23,7 @@ disabled = true
 
 [time]
 disabled = false
-format = 'PUSH-BKP 🙅 [ 🕙 $time ]($style) '
+format = '[ 🕙 $time ]($style) '
 time_format = "%I:%M:%S %p"
 utc_time_offset = "+6"
 style = "bold bg:#5A6374"
@@ -45,3 +45,22 @@ when = 'test "$STARSHIP_SHELL" = "fish"'
 [custom.zsh]
 command = "echo 🦀"
 when = 'test "$STARSHIP_SHELL" = "zsh"'   
+[nix_shell]
+disabled = false
+impure_msg = '[impure shell](bold red)'
+pure_msg = '[pure shell](bold green)'
+unknown_msg = '[default shell](bold yellow)'
+format = 'via [❄️ $state( \($name\))](bold blue) '
+# heuristic = true
+
+[kubernetes]
+symbol = "⎈ "
+#disabled = false
+#format = 'on [⎈ ($user on )($cluster in )$context \($namespace\)](dimmed blue) '
+#format = 'on [⎈ $context \($namespace\)](bold blue) '
+#detect_files=['*.yml', '*.yaml', '*.json']
+
+[docker_context]
+#detect_files = ['docker-compose.yml', 'docker-compose.yaml', 'Dockerfile']
+#detect_files = []
+#only_with_files = true
